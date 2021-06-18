@@ -169,15 +169,17 @@ class _OHLCVPainter extends CustomPainter {
       }
 
       // Label volume line
-      maxVolumePainter = new TextPainter(
-          text: new TextSpan(
-              text: labelPrefix + numCommaParse(_maxVolume),
-              style: new TextStyle(
-                  color: gridLineLabelColor,
-                  fontSize: 10.0,
-                  fontWeight: FontWeight.bold)),
-          textDirection: TextDirection.ltr);
-      maxVolumePainter.layout();
+      if (enableVolume) {
+        maxVolumePainter = new TextPainter(
+            text: new TextSpan(
+                text: labelPrefix + numCommaParse(_maxVolume),
+                style: new TextStyle(
+                    color: gridLineLabelColor,
+                    fontSize: 10.0,
+                    fontWeight: FontWeight.bold)),
+            textDirection: TextDirection.ltr);
+        maxVolumePainter.layout();
+      }
     }
   }
 
