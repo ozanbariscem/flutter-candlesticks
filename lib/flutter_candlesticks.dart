@@ -114,6 +114,7 @@ class _OHLCVPainter extends CustomPainter {
   TextPainter maxVolumePainter;
 
   numCommaParse(number) {
+    return 'Test';
     return number.round().toString().replaceAllMapped(
         new RegExp(r'(\d{1,3})(?=(\d{3})+(?!\d))'), (Match m) => "${m[1]},");
   }
