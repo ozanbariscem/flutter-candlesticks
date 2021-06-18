@@ -107,7 +107,7 @@ class _OHLCVPainter extends CustomPainter {
   final double gridLineWidth;
   final Color gridLineLabelColor;
   final String labelPrefix;
-  final double volumeProp;
+  double volumeProp;
   final bool enableVolume;
   final Color increaseColor;
   final Color decreaseColor;
@@ -188,6 +188,8 @@ class _OHLCVPainter extends CustomPainter {
     if (_min == null || _max == null || _maxVolume == null) {
       update();
     }
+    if (!enableVolume)
+      volumeProp = 0.0;
 
     final double volumeHeight = size.height * volumeProp;
     final double volumeNormalizer = volumeHeight / _maxVolume;
