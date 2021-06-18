@@ -15,7 +15,7 @@ class OHLCVGraph extends StatelessWidget {
     this.labelPrefix = "\$",
     this.enableGridLines = true,
     this.enableVolume = true,
-    this.volumeProp = .1,
+    this.volumeProp = .01,
     this.increaseColor = Colors.green,
     this.decreaseColor = Colors.red,
   })  : assert(data != null),
@@ -189,8 +189,8 @@ class _OHLCVPainter extends CustomPainter {
       update();
     }
 
-    final double volumeHeight = enableVolume ? size.height * volumeProp : .0;
-    final double volumeNormalizer = enableVolume ? volumeHeight / _maxVolume : .0;
+    final double volumeHeight = size.height * volumeProp;
+    final double volumeNormalizer = volumeHeight / _maxVolume;
 
     double width = size.width;
     final double height = size.height * (1 - volumeProp);
