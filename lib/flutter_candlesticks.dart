@@ -189,8 +189,8 @@ class _OHLCVPainter extends CustomPainter {
       update();
     }
 
-    final double volumeHeight = size.height * volumeProp;
-    final double volumeNormalizer = volumeHeight / _maxVolume;
+    final double volumeHeight = enableVolume ? size.height * volumeProp : .0;
+    final double volumeNormalizer = enableVolume ? volumeHeight / _maxVolume : .0;
 
     double width = size.width;
     final double height = size.height * (1 - volumeProp);
