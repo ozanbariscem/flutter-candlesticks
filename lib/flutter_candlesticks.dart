@@ -15,7 +15,7 @@ class OHLCVGraph extends StatelessWidget {
     this.labelPrefix = "\$",
     this.enableGridLines = true,
     this.enableVolume = true,
-    this.volumeProp = .01,
+    this.volumeProp = .1,
     this.increaseColor = Colors.green,
     this.decreaseColor = Colors.red,
   })  : assert(data != null),
