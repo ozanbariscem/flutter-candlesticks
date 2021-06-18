@@ -217,7 +217,9 @@ class _OHLCVPainter extends CustomPainter {
       }
 
       // Label volume line
-      maxVolumePainter.paint(canvas, new Offset(0.0, gridLineY + 2.0));
+      if (enableVolume) {
+        maxVolumePainter.paint(canvas, new Offset(0.0, gridLineY + 2.0));
+      }
     }
 
     final double heightNormalizer = height / (_max - _min);
