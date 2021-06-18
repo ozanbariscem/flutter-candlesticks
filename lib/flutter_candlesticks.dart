@@ -59,6 +59,7 @@ class OHLCVGraph extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print('Test');
     return new LimitedBox(
       maxHeight: fallbackHeight,
       maxWidth: fallbackWidth,
